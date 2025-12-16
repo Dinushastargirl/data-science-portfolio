@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
     <SectionWrapper id={SectionId.HERO} className="items-start z-10 pointer-events-none">
       <div className="pointer-events-auto w-full flex flex-col md:flex-row items-center md:items-start justify-between gap-12 max-w-7xl mx-auto mt-12">
         
-        {/* Text Content - NOW ON LEFT (Order 1) */}
+        {/* Text Content - LEFT SIDE (Order 1) */}
         <div className="flex-1 order-1 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
           <h2 className="text-lab-cyan font-mono text-sm md:text-base mb-4 tracking-widest uppercase opacity-80">
             <span className="inline-block w-2 h-2 bg-lab-cyan mr-2 rounded-full animate-pulse"></span>
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Profile Holo-Card - NOW ON RIGHT (Order 2) */}
+        {/* Profile Holo-Card - RIGHT SIDE (Order 2) */}
         <div className="relative group shrink-0 order-2 md:order-2">
           <div className="absolute -inset-1 bg-gradient-to-r from-lab-cyan via-lab-magenta to-lab-purple opacity-70 blur group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
           <div className="relative w-64 h-64 md:w-80 md:h-80 bg-black overflow-hidden border border-lab-dim">
@@ -48,11 +48,10 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 z-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
             <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-lab-cyan/10 to-transparent animate-scan"></div>
             
-            {/* User Image - Updated Link */}
+            {/* User Image - PostImg Link */}
             <img 
               src="https://i.postimg.cc/MvD6177f/IMG-20240324-WA0008.jpg" 
               onError={(e) => {
-                 // Fallback if the direct filename guess is wrong
                  e.currentTarget.src = "https://ui-avatars.com/api/?name=Dinusha+Pushparajah&background=0a0a0c&color=00f3ff&size=256";
               }}
               alt="Dinusha Pushparajah" 
