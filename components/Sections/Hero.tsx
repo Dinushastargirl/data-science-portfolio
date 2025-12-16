@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 z-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
             <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-lab-cyan/10 to-transparent animate-scan"></div>
             
-            {/* User Image - Corrected PostImg Direct Link */}
+            {/* User Image - Corrected PostImg Direct Link - NO GRAYSCALE */}
             <img 
               src="https://i.postimg.cc/MvD6177f/IMG-20240324-WA0008.jpg" 
               onError={(e) => {
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
                  e.currentTarget.src = "https://ui-avatars.com/api/?name=Dinusha+Pushparajah&background=0a0a0c&color=00f3ff&size=256";
               }}
               alt="Dinusha Pushparajah" 
-              className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+              className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
             />
             
             {/* Corner Markers */}
