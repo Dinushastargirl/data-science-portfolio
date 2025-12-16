@@ -21,8 +21,8 @@ export const Hero: React.FC = () => {
             Data Scientist <span className="text-lab-dim">|</span> ML Engineer
           </div>
           <div className="text-lab-dim font-mono text-sm max-w-xs">
-            > INITIALIZING SPECTRAL INTELLIGENCE LAB<br/>
-            > ENGINEERING INTELLIGENCE FROM RAW DATA
+            &gt; INITIALIZING SPECTRAL INTELLIGENCE LAB<br/>
+            &gt; ENGINEERING INTELLIGENCE FROM RAW DATA
           </div>
         </div>
       </div>
