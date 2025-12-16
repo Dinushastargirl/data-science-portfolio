@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
             </div>
             
             <a 
-              href="https://jumpshare.com/folder/LCmo7zYHqNOhAao6GfMQ" 
+              href="https://jumpshare.com/share/LQkFztVGZJNzZfIxb4H8" 
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 flex items-center gap-3 bg-lab-surface border border-lab-cyan/30 px-6 py-3 text-lab-cyan font-mono text-sm hover:bg-lab-cyan/10 hover:border-lab-cyan transition-all group w-fit"
