@@ -8,11 +8,12 @@ const App: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   return (
-    <div className="relative w-full h-screen bg-lab-bg overflow-hidden text-lab-text font-sans selection:bg-lab-cyan selection:text-black">
+    <div className="fixed inset-0 w-full h-full bg-lab-bg overflow-hidden text-lab-text font-sans selection:bg-lab-cyan selection:text-black">
       
       {/* 3D Background Layer */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+        <Canvas camera={{ position: [0, 0, 10], fov: 45 }} gl={{ antialias: true, alpha: false }}>
+          <color attach="background" args={['#030305']} />
           <Suspense fallback={null}>
              <LabScene scrollProgress={scrollProgress} />
           </Suspense>
@@ -24,7 +25,7 @@ const App: React.FC = () => {
 
       {/* Loading Overlay */}
       <Loader 
-        containerStyles={{ background: '#030305' }}
+        containerStyles={{ background: '#030305', zIndex: 1000 }}
         innerStyles={{ width: '200px', height: '2px', background: '#333' }}
         barStyles={{ height: '2px', background: '#00f3ff' }}
         dataStyles={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}
