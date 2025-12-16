@@ -1,6 +1,8 @@
 import React, { useRef, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Points, PointMaterial, Float } from '@react-three/drei';
+import { EffectComposer, Bloom, Noise, Glitch, Vignette } from '@react-three/postprocessing';
+import { GlitchMode, BlendFunction } from 'postprocessing';
 import * as THREE from 'three';
 
 interface LabSceneProps {
@@ -132,8 +134,6 @@ const DataGrid = ({ scrollProgress }: { scrollProgress: number }) => {
 }
 
 export const LabScene: React.FC<LabSceneProps> = ({ scrollProgress }) => {
-  const { viewport } = useThree();
-
   return (
     <>
       <ambientLight intensity={0.2} />
@@ -150,6 +150,20 @@ export const LabScene: React.FC<LabSceneProps> = ({ scrollProgress }) => {
         {/* Contextual Data Grid */}
         <DataGrid scrollProgress={scrollProgress} />
       </group>
+
+      <EffectComposer disableNormalPass>
+        <Bloom luminanceThreshold={0.5} mipmapBlur intensity={1.5} radius={0.4} />
+        <Noise opacity={0.1} blendFunction={BlendFunction.OVERLAY} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+        <Glitch 
+          delay={[1.5, 3.5]} 
+          duration={[0.1, 0.3]} 
+          strength={[0.1, 0.2]} 
+          mode={GlitchMode.SPORADIC} 
+          active 
+          ratio={0.85}
+        />
+      </EffectComposer>
     </>
   );
 };
